@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { fetchRandom } from '../actions';
-
+import Lanzando from '../resorurces/lanzando.jpg'
 const From = (props) => {// component stateless
   const [state, setState] = useState();
   const onSubmit = (e) => {
@@ -10,14 +10,15 @@ const From = (props) => {// component stateless
   };
   return <div>
     <form onSubmit={onSubmit}>
-      <label htmlFor="list">Ingrese una lista separada por comas:</label>
+      <label htmlFor="list"></label>
+      <img alt='' src={Lanzando} width="200" height="200"></img>
       <br />
       <textarea id="list" style={{ width: "300px", height: "120px" }} 
         onChange={(e) => setState(e.target.value)}
       ></textarea>
       <br />
       <button type="submit" disabled={props.loading}>
-        Enviar
+        Lanzar dado!!
       </button>
     </form>
   </div>
